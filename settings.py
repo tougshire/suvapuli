@@ -28,7 +28,7 @@ environ.Env.read_env(BASE_DIR / 'suvapuli/.env')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = env('DEBUG')=='True'
 
 ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
 
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'suvapuli.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ BASE_DIR / 'suvapuli' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,8 +124,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+print ( BASE_DIR / 'static' )
 
-STATIC_URL = '/static/'
+STATICFILES_DIRS = ( ( BASE_DIR / 'suvapuli/static' ), )
+
+STATIC_URL = env('STATIC_URL')
+
+STATIC_ROOT = env('STATIC_ROOT')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
