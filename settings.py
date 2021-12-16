@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'touglates.apps.TouglatesConfig',
     'suvapuli_auth.apps.SuvapuliAuthConfig',
     'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig'

@@ -23,4 +23,4 @@ urlpatterns = [
     path('accounts/', include('suvapuli_auth.urls')),
     path('prosdib/', include('prosdib.urls')),
     path('libtekin/', include('libtekin.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
