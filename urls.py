@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='suvapuli/home.html', extra_context=settings.HOMEPAGE_CONTENT), name='suvapuli_home'),
+    path('', TemplateView.as_view(template_name='suvapuli/home.html'), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('suvapuli_auth.urls')),
     path('prosdib/', include('prosdib.urls')),

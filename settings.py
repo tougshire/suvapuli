@@ -139,19 +139,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
 
-HOMEPAGE_TITLE = 'Suffolk Public Library, Virginia'
-
-HOMEPAGE_CONTENT = {
-    'title':'Suffolk Public Library, Virginia, Technology and Content Strategy Division',
-    'menu': [
-        {
-            'label':'Library Technical Inventory',
-            'urlname':'libtekin:item-list'
-        },
-        {
-            'label':'Account',
-            'urlname':'profile'
-        }
-
-    ]
-}

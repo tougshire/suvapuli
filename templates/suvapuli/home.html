@@ -7,10 +7,18 @@
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <div class="menu">
-      {% for menuitem in menu %}
-      <a href="{% url menuitem.urlname %}">{{ menuitem.label }}</a>
-      {% endfor %}
+    <div class="menu menu-top">
+      <div class="menu-item">
+        <a href="{% url 'libtekin:item-list' %}">Library Technical Inventory</a>
+      </div>
+      <div class="menu-item">
+        {% if user.username %}
+          <a href="{% url 'profile' %}">{{ user.username }}</a> /
+          <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+      </div>
     </div>
     <div class="content">
       <img src="{% static 'suvapuli/spltcs_logo.png' %}">
