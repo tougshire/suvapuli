@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href="{% static 'suvapuli/suvapuli.css' %}">
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <div class="menu">
+      {% for menuitem in menu %}
+      <a href="{% url menuitem.urlname %}">{{ menuitem.label }}</a>
+      {% endfor %}
+    </div>
+    <div class="content">
+      <img src="{% static 'suvapuli/spltcs_logo.png' %}">
+    </div>
+  </body>
+</html>

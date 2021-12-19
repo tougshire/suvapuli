@@ -62,7 +62,7 @@ ROOT_URLCONF = 'suvapuli.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'suvapuli' ],
+        'DIRS': [ BASE_DIR / 'suvapuli/templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,9 +130,28 @@ STATIC_URL = env('STATIC_URL')
 
 STATIC_ROOT = env('STATIC_ROOT')
 
+STATICFILES_DIRS = [ BASE_DIR / 'suvapuli/static' ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
+
+HOMEPAGE_TITLE = 'Suffolk Public Library, Virginia'
+
+HOMEPAGE_CONTENT = {
+    'title':'Suffolk Public Library, Virginia, Technology and Content Strategy Division',
+    'menu': [
+        {
+            'label':'Library Technical Inventory',
+            'urlname':'libtekin:item-list'
+        },
+        {
+            'label':'Account',
+            'urlname':'profile'
+        }
+
+    ]
+}
