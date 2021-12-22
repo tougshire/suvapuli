@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'touglates.apps.TouglatesConfig',
+    'tougshire_vistas.apps.TougshireVistasConfig',
     'suvapuli_auth.apps.SuvapuliAuthConfig',
     'prosdib.apps.ProsdibConfig',
-    'libtekin.apps.LibtekinConfig'
+    'libtekin.apps.LibtekinConfig',
+    'libtekticket.apps.LibtekticketConfig'
 ]
 
 MIDDLEWARE = [
@@ -139,3 +141,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
 
+LIBTEKTICKET_ITEM = 'libtekin.Item'

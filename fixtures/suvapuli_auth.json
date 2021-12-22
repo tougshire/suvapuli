@@ -205,24 +205,24 @@
           "mmodelcategory"
         ],
         [
-          "add_viewitem",
-          "libtekin",
-          "viewitem"
+          "add_vista",
+          "tougshire_vistas",
+          "vista"
         ],
         [
-          "change_viewitem",
-          "libtekin",
-          "viewitem"
+          "change_vista",
+          "tougshire_vistas",
+          "vista"
         ],
         [
-          "delete_viewitem",
-          "libtekin",
-          "viewitem"
+          "delete_vista",
+          "tougshire_vistas",
+          "vista"
         ],
         [
-          "view_viewitem",
-          "libtekin",
-          "viewitem"
+          "view_vista",
+          "tougshire_vistas",
+          "vista"
         ],
         [
           "add_project",
