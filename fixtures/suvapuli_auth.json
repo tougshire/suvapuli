@@ -105,24 +105,24 @@
           "item"
         ],
         [
-          "add_itemnote",
+          "add_timelynote",
           "libtekin",
-          "itemnote"
+          "timelynote"
         ],
         [
-          "change_itemnote",
+          "change_timelynote",
           "libtekin",
-          "itemnote"
+          "timelynote"
         ],
         [
-          "delete_itemnote",
+          "delete_timelynote",
           "libtekin",
-          "itemnote"
+          "timelynote"
         ],
         [
-          "view_itemnote",
+          "view_timelynote",
           "libtekin",
-          "itemnote"
+          "timelynote"
         ],
         [
           "add_location",
