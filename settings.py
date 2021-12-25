@@ -142,3 +142,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
 
 LIBTEKTICKET_ITEM = 'libtekin.Item'
+
+LIBTEKIN_ID_CHOICES = [
+    ('serial_number', 'Serial Number'),
+    ('service_number', 'Service Number'),
+    ('asset_number', 'Asset Number'),
+    ('barcode', 'Barcode')
+]
