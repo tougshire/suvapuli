@@ -105,24 +105,24 @@
           "item"
         ],
         [
-          "add_timelynote",
+          "add_itemnote",
           "libtekin",
-          "timelynote"
+          "itemnote"
         ],
         [
-          "change_timelynote",
+          "change_itemnote",
           "libtekin",
-          "timelynote"
+          "itemnote"
         ],
         [
-          "delete_timelynote",
+          "delete_itemnote",
           "libtekin",
-          "timelynote"
+          "itemnote"
         ],
         [
-          "view_timelynote",
+          "view_itemnote",
           "libtekin",
-          "timelynote"
+          "itemnote"
         ],
         [
           "add_location",
@@ -284,6 +284,66 @@
           "prosdib",
           "statusupdate"
         ]
+        [
+          "add_ticket",
+          "libtekticket",
+          "ticket"
+        ],
+        [
+          "change_ticket",
+          "libtekticket",
+          "ticket"
+        ],
+        [
+          "delete_ticket",
+          "libtekticket",
+          "ticket"
+        ],
+        [
+          "view_ticket",
+          "libtekticket",
+          "ticket"
+        ],
+        [
+          "add_ticketnote",
+          "libtekticket",
+          "ticketnote"
+        ],
+        [
+          "change_ticketnote",
+          "libtekticket",
+          "ticketnote"
+        ],
+        [
+          "delete_ticketnote",
+          "libtekticket",
+          "ticketnote"
+        ],
+        [
+          "view_ticketnote",
+          "libtekticket",
+          "ticketnote"
+        ],
+        [
+          "add_history",
+          "libtekticket",
+          "history"
+        ],
+        [
+          "change_history",
+          "libtekticket",
+          "history"
+        ],
+        [
+          "delete_history",
+          "libtekticket",
+          "history"
+        ],
+        [
+          "view_history",
+          "libtekticket",
+          "history"
+        ],
       ]
     }
   },

@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'tougshire_vistas.apps.TougshireVistasConfig',
     'suvapuli_auth.apps.SuvapuliAuthConfig',
     'prosdib.apps.ProsdibConfig',
+    'libtekticket.apps.LibtekticketConfig',
     'libtekin.apps.LibtekinConfig',
-    'libtekticket.apps.LibtekticketConfig'
 ]
 
 MIDDLEWARE = [
@@ -140,8 +140,6 @@ STATICFILES_DIRS = [ BASE_DIR / 'suvapuli/static' ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
-
-LIBTEKTICKET_ITEM = 'libtekin.Item'
 
 LIBTEKIN_ID_CHOICES = [
     ('serial_number', 'Serial Number'),
