@@ -283,7 +283,7 @@
           "view_statusupdate",
           "prosdib",
           "statusupdate"
-        ]
+        ],
         [
           "add_ticket",
           "libtekticket",
@@ -343,7 +343,7 @@
           "view_history",
           "libtekticket",
           "history"
-        ],
+        ]
       ]
     }
   },
@@ -352,6 +352,14 @@
     "fields": {
       "group_ptr": [
         "Technician"
+      ]
+    }
+  },
+  {
+    "model": "suvapuli_auth.suvapuliauthgroup",
+    "fields": {
+      "group_ptr": [
+        "Library Staff"
       ]
     }
   },

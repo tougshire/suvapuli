@@ -9,7 +9,10 @@
     <h1>{{ title }}</h1>
     <div class="menu menu-top">
       <div class="menu-item">
-        <a href="{% url 'libtekin:ticket-list' %}">Library Technical Inventory</a>
+        <a href="{% url 'libtekin:item-list' %}">Library Technical Inventory</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'libtekticket:ticket-list' %}">Tech Tickets</a>
       </div>
       <div class="menu-item">
         {% if user.username > "" %}
