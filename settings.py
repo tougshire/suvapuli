@@ -90,6 +90,8 @@ DATABASES = {
     }
 }
 
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+
 AUTH_USER_MODEL = 'suvapuli_auth.SuvapuliAuthUser'
 
 # Password validation
