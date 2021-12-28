@@ -149,3 +149,5 @@ LIBTEKIN_ID_CHOICES = [
     ('asset_number', 'Asset Number'),
     ('barcode', 'Barcode')
 ]
+
+PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
