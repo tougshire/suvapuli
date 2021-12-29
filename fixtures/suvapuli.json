@@ -1,0 +1,36 @@
+[
+  {
+        "model": "suvapuli_auth.suvapuliauthgroup",
+        "fields": {
+              "group_ptr": [
+                    "Technician"
+              ]
+        }
+  },
+  {
+        "model": "suvapuli_auth.suvapuliauthgroup",
+        "fields": {
+              "group_ptr": [
+                    "Library Staff"
+              ]
+        }
+  },
+  {
+        "model": "suvapuli_auth.suvapuliauthuser",
+        "fields": {
+              "password": "pbkdf2_sha256$260000$rdFYBwQJSeg9GUNsRJJsxy$79dDJ2RBnEwqXrC5/7JWMqq7LwdHtaDoZfcj0FyhPnI=",
+              "last_login": "2020-20-20T20:20:20.200Z",
+              "is_superuser": true,
+              "username": "admin",
+              "first_name": "",
+              "last_name": "",
+              "email": "new_suvapuli_install@tougshire.com",
+              "is_staff": true,
+              "is_active": true,
+              "date_joined": "2020-20-20T20:20:20.200Z",
+              "display_name": "",
+              "groups": [],
+              "user_permissions": []
+        }
+  }
+]
