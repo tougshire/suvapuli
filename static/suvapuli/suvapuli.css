@@ -5,6 +5,15 @@
     display:none;
 }
 
+#div_homelogo {
+    margin: 5em auto;
+    text-align: center;
+}
+#img_homelogo {
+    text-align: center;
+    width:40%;
+}
+
 .menu-top {
     display: flex;
     justify-content: space-around;
