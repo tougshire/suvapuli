@@ -35,6 +35,7 @@
 
 .form .label {
     width:15%;
+    flex-grow:0;
 }
 
 .form .help_text {
@@ -94,6 +95,10 @@
 
 .viewform .control {
     display:flex;
+}
+.control .label {
+    flex-grow:0;
+    width:15%;
 }
 
 .viewform .label {

@@ -151,3 +151,4 @@ LIBTEKIN_ID_CHOICES = [
 ]
 
 PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
+GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
