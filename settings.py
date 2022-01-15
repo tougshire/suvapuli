@@ -90,7 +90,7 @@ DATABASES = {
     }
 }
 
-EMAIL_BACKEND = env('EMAIL_BACKEND')
+#EMAIL_BACKEND = env('EMAIL_BACKEND')
 
 AUTH_USER_MODEL = 'suvapuli_auth.SuvapuliAuthUser'
 
@@ -151,3 +151,13 @@ LIBTEKIN_ID_CHOICES = [
 ]
 
 PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
+GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
+
+SENDGRID_API_KEY = env('SENDGRID_API_KEY')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+
+DEFAULT_FROM_EMAIL = 'tougshire@tougshire.com'
