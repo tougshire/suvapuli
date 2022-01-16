@@ -152,7 +152,6 @@ LIBTEKIN_ID_CHOICES = [
 
 PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
 GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
-<<<<<<< HEAD
 
 SENDGRID_API_KEY = env('SENDGRID_API_KEY')
 EMAIL_HOST = env('EMAIL_HOST')
@@ -162,5 +161,3 @@ EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
 DEFAULT_FROM_EMAIL = 'tougshire@tougshire.com'
-=======
->>>>>>> 6c0c10a0b70dcc12d374da22fc87b136a0d1d6c0
