@@ -22,7 +22,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name='suvapuli/home.html'), name='home'),
     path('admin/', admin.site.urls),
-    path('accounts/', include('suvapuli_auth.urls')),
+    path('accounts/', include('tougshire_auth.urls')),
     path('prosdib/', include('prosdib.urls')),
     path('libtekin/', include('libtekin.urls')),
     path('libtekticket/', include('libtekticket.urls'))

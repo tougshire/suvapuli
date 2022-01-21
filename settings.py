@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
-    'suvapuli_auth.apps.SuvapuliAuthConfig',
+    'tougshire_auth.apps.TougshireAuthConfig',
     'prosdib.apps.ProsdibConfig',
     'libtekticket.apps.LibtekticketConfig',
     'libtekin.apps.LibtekinConfig',
@@ -92,7 +92,7 @@ DATABASES = {
 
 #EMAIL_BACKEND = env('EMAIL_BACKEND')
 
-AUTH_USER_MODEL = 'suvapuli_auth.SuvapuliAuthUser'
+AUTH_USER_MODEL = 'tougshire_auth.TougshireAuthUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
