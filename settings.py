@@ -146,7 +146,9 @@ LIBTEKIN_ID_CHOICES = [
     ('serial_number', 'Serial Number'),
     ('service_number', 'Service Number'),
     ('asset_number', 'Asset Number'),
-    ('barcode', 'Barcode')
+    ('barcode', 'Barcode'),
+    ('phone_number', 'Phone Number'),
+    ('essid', 'ESSID')
 ]
 
 PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
