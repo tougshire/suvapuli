@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'anymail',
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
     'tougshire_auth.apps.TougshireAuthConfig',
@@ -89,8 +90,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-#EMAIL_BACKEND = env('EMAIL_BACKEND')
 
 AUTH_USER_MODEL = 'tougshire_auth.TougshireAuthUser'
 
@@ -154,11 +153,18 @@ LIBTEKIN_ID_CHOICES = [
 PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
 GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
 
-SENDGRID_API_KEY = env('SENDGRID_API_KEY')
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = env('EMAIL_PORT')
-EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+# SENDGRID_API_KEY = env('SENDGRID_API_KEY')
+# EMAIL_HOST = env('EMAIL_HOST')
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+# EMAIL_PORT = env('EMAIL_PORT')
+# EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+
+# DEFAULT_FROM_EMAIL = 'tougshire@tougshire.com'
+
+
+SENDINBLUE_API_KEY = env('SENDINBLUE_API_KEY')
 
 DEFAULT_FROM_EMAIL = 'tougshire@tougshire.com'
+
+EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
