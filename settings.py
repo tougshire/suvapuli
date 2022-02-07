@@ -93,6 +93,8 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'tougshire_auth.TougshireAuthUser'
 
+TOUGSHIRE_AUTH_MENU_FILE = 'suvapuli/menu.html'
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -165,6 +167,6 @@ GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
 
 SENDINBLUE_API_KEY = env('SENDINBLUE_API_KEY')
 
-DEFAULT_FROM_EMAIL = 'tougshire@tougshire.com'
+DEFAULT_FROM_EMAIL = 'suffolkpubliclibrary@tougshire.com'
 
 EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"

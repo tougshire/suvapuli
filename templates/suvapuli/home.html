@@ -1,3 +1,4 @@
+{% extends './_base.html'%}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -7,11 +8,15 @@
   </head>
   <body>
     <h1>Suffolk Public Library, Virginia<br><span class="subh1">Technology and Content Strategy Division</span></h1>
+    {% block menu %}
     {% include 'suvapuli/menu.html' %}
+    {% endblock %}
+    {% block content %}
     <div class="content">
       <div id="div_homelogo">
         <img id="img_homelogo" src="{% static 'suvapuli/spltcs_logo.png' %}">
       </div>
     </div>
+    {% endblock %}
   </body>
 </html>
