@@ -42,12 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'anymail',
+    'djmoney',
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
     'tougshire_auth.apps.TougshireAuthConfig',
-    'prosdib.apps.ProsdibConfig',
-    'libtekticket.apps.LibtekticketConfig',
+    # 'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
+    'libtekticket.apps.LibtekticketConfig',
 ]
 
 MIDDLEWARE = [
