@@ -25,5 +25,7 @@ urlpatterns = [
     path('accounts/', include('tougshire_auth.urls')),
     # path('prosdib/', include('prosdib.urls')),
     path('libtekin/', include('libtekin.urls')),
-    path('libtekticket/', include('libtekticket.urls'))
+    path('libtekticket/', include('libtekticket.urls')),
+    path('wishlist/', include('wishlist.urls'))
+
 ]

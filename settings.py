@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # 'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
     'libtekticket.apps.LibtekticketConfig',
+    'wishlist.apps.WishlistConfig',
 ]
 
 MIDDLEWARE = [
