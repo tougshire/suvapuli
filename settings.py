@@ -46,10 +46,9 @@ INSTALLED_APPS = [
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
     'tougshire_auth.apps.TougshireAuthConfig',
-    # 'prosdib.apps.ProsdibConfig',
+    'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
     'libtekticket.apps.LibtekticketConfig',
-    'wishlist.apps.WishlistConfig',
 ]
 
 MIDDLEWARE = [

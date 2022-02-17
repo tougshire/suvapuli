@@ -36,15 +36,15 @@
       </div>
     {% endif %}
   {% endif %}
-  {% if perms.wishlist.view_itemrequest %}
-    {% url 'wishlist:itemrequest-list' as wishlist_url %}
-    {% if wishlist_url == url_here %}
+  {% if perms.prosdib.view_project %}
+    {% url 'prosdib:project-list' as prosdib_url %}
+    {% if prosdib_url == url_here %}
       <div class="menu-item menu-here">
-        Wish List
+        Projects
       </div>
     {% else %}
       <div class="menu-item">
-        <a href="{{ wishlist_url }}">Wish List</a>
+        <a href="{{ prosdib_url }}">Projects</a>
       </div>
     {% endif %}
   {% endif %}
