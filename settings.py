@@ -153,8 +153,12 @@ LIBTEKIN_ID_CHOICES = [
     ('essid', 'ESSID')
 ]
 
-PROJECT_MENU_TEMPLATE='suvapuli/menu.html'
-GLOBAL_CSS_FILE = 'suvapuli/suvapuli.css'
+PROJECT_INCLUDE_FILE = 'suvapuli/menu.html'
+# PROJECT_INCLUDE_FILES = {
+#     'main menu':'suvapuli/menu.html',
+#     'alt menu':'suvapuli/menu1.html',
+# }
+PROJECT_CSS_FILE = 'suvapuli/suvapuli.css'
 
 # SENDGRID_API_KEY = env('SENDGRID_API_KEY')
 # EMAIL_HOST = env('EMAIL_HOST')
