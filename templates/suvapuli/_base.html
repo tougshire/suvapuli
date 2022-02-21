@@ -1,15 +1,16 @@
 {% load static %}
 {% load url_utils %}
-{% load shared_stuff %}
+{% load touglates_tags %}
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
 <title>Library Technical Inventory</title>
-{% global_css_file as glocssfile %}
+{% project_css_file as glocssfile %}
 {% if glocssfile %}
   <link rel="stylesheet" href="{% static glocssfile %}">
 {% endif %}
-<link rel="stylesheet" href="{% static 'libtekin/libtekin.css' %}">
+
 </head>
 <body>
   {% if messages %}
@@ -20,7 +21,10 @@
 </ul>
 {% endif %}
 {% block menu %}
-{% include 'suvapuli/menu.html' %}
+{% project_include_file as includefile %}
+{% if includefile %}
+  {% include includefile %}
+{% endif %}
 {% endblock %}
 {% block content %}{% endblock %}
 {% block bottomscript %}{% endblock %}
