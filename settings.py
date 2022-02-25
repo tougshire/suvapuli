@@ -173,7 +173,7 @@ SENDINBLUE_API_KEY = env('SENDINBLUE_API_KEY')
 
 DEFAULT_FROM_EMAIL = 'suffolkpubliclibrary@tougshire.com'
 
-EMAIL_BACKEND = "django_ses.SESBackend"
+EMAIL_BACKEND = env('EMAIL_BACKEND')
 
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 
