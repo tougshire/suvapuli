@@ -164,3 +164,8 @@
 .vista .control {
     display:flex;
 }
+
+.grayedout {
+    background-color:#ccc;
+    color:#666;
+}
