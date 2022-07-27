@@ -18,11 +18,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from rest_framework import routers, serializers, viewsets
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name='suvapuli/home.html'), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('tougshire_auth.urls')),
+    path('api-auth/', include('rest_framework.urls')),
     path('libtekin/', include('libtekin.urls')),
     path('libtekticket/', include('libtekticket.urls')),
     path('prosdib/', include('prosdib.urls')),

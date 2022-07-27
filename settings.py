@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djmoney',
+    'rest_framework',
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
     'tougshire_auth.apps.TougshireAuthConfig',
@@ -143,6 +144,14 @@ STATICFILES_DIRS = [ BASE_DIR / 'suvapuli/static' ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 FIXTURE_DIRS = [ BASE_DIR / 'suvapuli/fixtures' ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 LIBTEKIN_ID_CHOICES = [
     ('serial_number', 'Serial Number'),
