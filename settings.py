@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
     'libtekticket.apps.LibtekticketConfig',
+    'ppclp.apps.PpclpConfig',
 ]
 
 MIDDLEWARE = [
