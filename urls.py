@@ -28,4 +28,6 @@ urlpatterns = [
     path('libtekin/', include('libtekin.urls')),
     path('libtekticket/', include('libtekticket.urls')),
     path('prosdib/', include('prosdib.urls')),
+    path('ppclp/', include('ppclp.urls')),
+
 ]
