@@ -169,3 +169,7 @@
     background-color:#ccc;
     color:#666;
 }
+
+td, th {
+    vertical-align: top;
+}
