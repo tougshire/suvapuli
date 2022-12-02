@@ -12,6 +12,7 @@
       </div>
     {% endif %}
   {% endif %}
+  {% comment %}
   {% if perms.libtekticket.view_ticket %}
     {% url 'libtekticket:ticket-list' as libtekticket_url %}
     {% if libtekticket_url == url_here %}
@@ -24,6 +25,7 @@
       </div>
     {% endif %}
   {% endif %}
+  {% endcomment %}
   {% if perms.libtekin.view_item %}
     {% url 'libtekin:item-list' as libtekin_url %}
     {% if libtekin_url == url_here %}
