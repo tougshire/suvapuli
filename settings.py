@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'tougshire_auth.apps.TougshireAuthConfig',
     'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
-    'libtekticket.apps.LibtekticketConfig',
-    'ppclp.apps.PpclpConfig',
+    # 'libtekticket.apps.LibtekticketConfig',
+    # 'ppclp.apps.PpclpConfig',
 ]
 
 MIDDLEWARE = [

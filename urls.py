@@ -26,8 +26,8 @@ urlpatterns = [
     path('accounts/', include('tougshire_auth.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('libtekin/', include('libtekin.urls')),
-    path('libtekticket/', include('libtekticket.urls')),
+#    path('libtekticket/', include('libtekticket.urls')),
     path('prosdib/', include('prosdib.urls')),
-    path('ppclp/', include('ppclp.urls')),
+#    path('ppclp/', include('ppclp.urls')),
 
 ]
