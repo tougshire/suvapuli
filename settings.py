@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djmoney',
     'rest_framework',
     'touglates.apps.TouglatesConfig',
     'tougshire_vistas.apps.TougshireVistasConfig',
