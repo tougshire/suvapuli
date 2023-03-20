@@ -27,5 +27,6 @@ urlpatterns = [
 #    path('libtekticket/', include('libtekticket.urls')),
     path('prosdib/', include('prosdib.urls')),
 #    path('ppclp/', include('ppclp.urls')),
+    path('orgchart/', include('suvapuli_orgchart.urls')),
 
 ]

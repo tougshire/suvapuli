@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'tougshire_auth.apps.TougshireAuthConfig',
     'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
+    'networkx',
+    'suvapuli_orgchart.apps.SuvapuliOrgchartConfig',
     # 'libtekticket.apps.LibtekticketConfig',
     # 'ppclp.apps.PpclpConfig',
 ]
