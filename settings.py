@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'prosdib.apps.ProsdibConfig',
     'libtekin.apps.LibtekinConfig',
     'networkx',
-    'suvapuli_orgchart.apps.SuvapuliOrgchartConfig',
+    'splorgchart.apps.SplOrgchartConfig',
     # 'libtekticket.apps.LibtekticketConfig',
     # 'ppclp.apps.PpclpConfig',
 ]
@@ -169,3 +169,17 @@ EMAIL_BACKEND = env('EMAIL_BACKEND')
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}
