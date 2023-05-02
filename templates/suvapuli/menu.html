@@ -14,8 +14,7 @@
   {% endif %}
   {% comment %}
   {% if perms.libtekticket.view_ticket %}
-    {% url 'libtekticket:ticket-list' as libtekticket_url %}
-    {% if libtekticket_url == url_here %}
+    {% if 'libtekticket' in request.resolver_match.app_names %}
       <div class="menu-item menu-here">
         Tickets
       </div>
@@ -27,26 +26,24 @@
   {% endif %}
   {% endcomment %}
   {% if perms.libtekin.view_item %}
-    {% url 'libtekin:item-list' as libtekin_url %}
-    {% if libtekin_url == url_here %}
+    {% if 'libtekin' in request.resolver_match.app_names %}
       <div class="menu-item menu-here">
         Inventory
       </div>
     {% else %}
       <div class="menu-item">
-        <a href="{{ libtekin_url }}">Inventory</a>
+        <a href="{% url 'libtekin:item-list' %}">Inventory</a>
       </div>
     {% endif %}
   {% endif %}
   {% if perms.prosdib.view_project %}
-    {% url 'prosdib:project-list' as prosdib_url %}
-    {% if prosdib_url == url_here %}
+    {% if 'prosdib' in request.resolver_match.app_names %}
       <div class="menu-item menu-here">
         Projects
       </div>
     {% else %}
       <div class="menu-item">
-        <a href="{{ prosdib_url }}">Projects</a>
+        <a href="{% url 'prosdib:project-list' %}">Projects</a>
       </div>
     {% endif %}
   {% endif %}
