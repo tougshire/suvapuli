@@ -180,6 +180,6 @@ LOGGING = {
     },
     'root': {
         'handlers': ['console'],
-        'level': 'WARNING',
+        'level': env('LOGGING_ROOT_LEVEL'),
     },
 }
