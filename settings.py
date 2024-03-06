@@ -19,99 +19,100 @@ env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(BASE_DIR / '.env')
+environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = env("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')=='True'
+DEBUG = env("DEBUG") == "True"
 
-ALLOWED_HOSTS = env('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'touglates.apps.TouglatesConfig',
-    'tougshire_vistas.apps.TougshireVistasConfig',
-    'tougshire_auth.apps.TougshireAuthConfig',
-    'prosdib.apps.ProsdibConfig',
-    'libtekin.apps.LibtekinConfig',
-    'networkx',
-    'splorgchart.apps.SplOrgchartConfig',
-    # 'libtekticket.apps.LibtekticketConfig',
-    # 'ppclp.apps.PpclpConfig',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "feeds",
+    "import_export",
+    "touglates.apps.TouglatesConfig",
+    "tougcomsys.apps.TougcomsysConfig",
+    "tougshire_vistas.apps.TougshireVistasConfig",
+    "tougshire_auth.apps.TougshireAuthConfig",
+    "prosdib.apps.ProsdibConfig",
+    "libtekin.apps.LibtekinConfig",
+    "mifi_compare",
+    "library_staff.apps.LibraryStaffConfig",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'suvapuli.urls'
+ROOT_URLCONF = "suvapuli.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ BASE_DIR / 'suvapuli/templates' ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "suvapuli/templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "tougcomsys.context_processors.tougcomsys",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'suvapuli.wsgi.application'
+WSGI_APPLICATION = "suvapuli.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
-AUTH_USER_MODEL = 'tougshire_auth.TougshireAuthUser'
+AUTH_USER_MODEL = "tougshire_auth.TougshireAuthUser"
 
-TOUGSHIRE_AUTH_MENU_FILE = 'suvapuli/menu.html'
+TOUGSHIRE_AUTH_MENU_FILE = "suvapuli/menu.html"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -119,9 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -132,54 +133,73 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = env('STATIC_URL')
+STATIC_URL = env("STATIC_URL")
 
-STATIC_ROOT = env('STATIC_ROOT')
+STATIC_ROOT = ""
 
-STATICFILES_DIRS = [ BASE_DIR / 'suvapuli/static' ]
+STATICFILES_DIRS = [BASE_DIR / "suvapuli/static"]
 
-MEDIA_URL = env('MEDIA_URL')
+MEDIA_URL = env("MEDIA_URL")
 
-MEDIA_ROOT = env('MEDIA_ROOT')
+MEDIA_ROOT = env("MEDIA_ROOT")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LIBTEKIN_ID_CHOICES = [
-    ('serial_number', 'Serial Number'),
-    ('service_number', 'Service Number'),
-    ('asset_number', 'Asset Number'),
-    ('barcode', 'Barcode'),
-    ('phone_number', 'Phone Number'),
-    ('essid', 'ESSID')
+    ("serial_number", "Serial Number"),
+    ("service_number", "Service Number"),
+    ("asset_number", "Asset Number"),
+    ("barcode", "Barcode"),
+    ("phone_number", "Phone Number"),
+    ("mobile_id", "Mobile ID"),
 ]
 
 # PROJECT_INCLUDE_FILE = 'suvapuli/menu.html'
 PROJECT_INCLUDE_FILES = {
-    'main_menu':'suvapuli/menu.html',
-    'main_css':'suvapuli/suvapuli.css',
+    "main_menu": "suvapuli/menu.html",
+    "main_css": "suvapuli/suvapuli.css",
 }
 
-DEFAULT_FROM_EMAIL = 'suffolkpubliclibrary@tougshire.com'
+TOUGCOMSYS_AVAILABLE = {
+    "active": "firsthome",
+    "firsthome": {
+        "BANNER_IMAGE": os.path.join(
+            STATIC_URL, "bnmng", "benjaminnomiddlenamegoldberg.png"
+        ),
+        "SITE_NAME": "Suffolk Public Library",
+        "TEMPLATE_DIR": "tougcomsys/firsthome",
+        "STATIC_DIR": "tougcomsys/firsthome",
+        "FOOTER_CONTENT": "A tougshire project",
+        "COLORSCHEME": "blue",
+        "RECIPIENTS": ["benjamin@bnmng.com"],
+    },
+}
 
-EMAIL_BACKEND = env('EMAIL_BACKEND')
+TOUGCOMSYS = TOUGCOMSYS_AVAILABLE["firsthome"]
 
-AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+DEFAULT_FROM_EMAIL = "suffolkpubliclibrary@tougshire.com"
 
-AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+EMAIL_BACKEND = env("EMAIL_BACKEND")
+
+AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+
+AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
         },
     },
-    'root': {
-        'handlers': ['console'],
-        'level': env('LOGGING_ROOT_LEVEL'),
+    "root": {
+        "handlers": ["console"],
+        "level": env("LOGGING_ROOT_LEVEL"),
     },
 }
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True

@@ -20,13 +20,13 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='suvapuli/home.html'), name='home'),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('tougshire_auth.urls')),
-    path('libtekin/', include('libtekin.urls')),
-#    path('libtekticket/', include('libtekticket.urls')),
-    path('prosdib/', include('prosdib.urls')),
-#    path('ppclp/', include('ppclp.urls')),
-    path('orgchart/', include('splorgchart.urls')),
-
-]
+    path("", TemplateView.as_view(template_name="suvapuli/home.html"), name="home"),
+    path("admin/", admin.site.urls),
+    path("articles/", include("tougcomsys.urls")),
+    path("accounts/", include("tougshire_auth.urls")),
+    path("libtekin/", include("libtekin.urls")),
+    path("library_staff/", include("library_staff.urls")),
+    path("prosdib/", include("prosdib.urls")),
+    path("touglates/", include("touglates.urls")),
+    path("mifi_compare/", include("mifi_compare.urls")),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
