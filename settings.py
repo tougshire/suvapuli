@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "prosdib.apps.ProsdibConfig",
     "libtekin.apps.LibtekinConfig",
     "mifi_compare",
+    "spl_scheduler.apps.SplSchedulerConfig",
     "library_staff.apps.LibraryStaffConfig",
 ]
 
