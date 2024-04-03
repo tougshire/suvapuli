@@ -11,25 +11,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import environ
 import os
-
-env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
-
-DEBUG = env("DEBUG") == "True"
-
-ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
+SECRET_KEY = "6ip-days%@jrypf2ld8+f9+oc1#*2q86fqx206q8!1_6n8pey^"
 
 # Application definition
 
@@ -40,17 +31,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "feeds",
-    "import_export",
     "touglates.apps.TouglatesConfig",
-    "tougcomsys.apps.TougcomsysConfig",
-    "tougshire_vistas.apps.TougshireVistasConfig",
+    "django_filters_stoex.apps.DjangoFiltersStoexConfig",
     "tougshire_auth.apps.TougshireAuthConfig",
-    "prosdib.apps.ProsdibConfig",
     "libtekin.apps.LibtekinConfig",
     "mifi_compare",
     "spl_scheduler.apps.SplSchedulerConfig",
-    "library_staff.apps.LibraryStaffConfig",
 ]
 
 MIDDLEWARE = [
@@ -76,7 +62,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "tougcomsys.context_processors.tougcomsys",
             ],
         },
     },
@@ -91,7 +76,7 @@ WSGI_APPLICATION = "suvapuli.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "var" / "suvapuli.db",
     }
 }
 
@@ -134,15 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = env("STATIC_URL")
-
-STATIC_ROOT = ""
 
 STATICFILES_DIRS = [BASE_DIR / "suvapuli/static"]
-
-MEDIA_URL = env("MEDIA_URL")
-
-MEDIA_ROOT = env("MEDIA_ROOT")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -164,43 +142,5 @@ PROJECT_INCLUDE_FILES = {
     "main_css": "suvapuli/suvapuli.css",
 }
 
-TOUGCOMSYS_AVAILABLE = {
-    "active": "firsthome",
-    "firsthome": {
-        "BANNER_IMAGE": os.path.join(
-            STATIC_URL, "bnmng", "benjaminnomiddlenamegoldberg.png"
-        ),
-        "SITE_NAME": "Suffolk Public Library",
-        "TEMPLATE_DIR": "tougcomsys/firsthome",
-        "STATIC_DIR": "tougcomsys/firsthome",
-        "FOOTER_CONTENT": "A tougshire project",
-        "COLORSCHEME": "blue",
-        "RECIPIENTS": ["benjamin@bnmng.com"],
-    },
-}
-
-TOUGCOMSYS = TOUGCOMSYS_AVAILABLE["firsthome"]
 
 DEFAULT_FROM_EMAIL = "suffolkpubliclibrary@tougshire.com"
-
-EMAIL_BACKEND = env("EMAIL_BACKEND")
-
-AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-
-AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "console": {
-            "class": "logging.StreamHandler",
-        },
-    },
-    "root": {
-        "handlers": ["console"],
-        "level": env("LOGGING_ROOT_LEVEL"),
-    },
-}
-
-IMPORT_EXPORT_USE_TRANSACTIONS = True

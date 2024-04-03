@@ -13,20 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
-urlpatterns = [
-    path("", TemplateView.as_view(template_name="suvapuli/home.html"), name="home"),
-    path("admin/", admin.site.urls),
-    path("articles/", include("tougcomsys.urls")),
-    path("accounts/", include("tougshire_auth.urls")),
-    path("libtekin/", include("libtekin.urls")),
-    path("library_staff/", include("library_staff.urls")),
-    path("prosdib/", include("prosdib.urls")),
-    path("touglates/", include("touglates.urls")),
-    path("mifi_compare/", include("mifi_compare.urls")),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns = (
+    [
+        path("", TemplateView.as_view(template_name="suvapuli/home.html"), name="home"),
+        path("admin/", admin.site.urls),
+        path("accounts/", include("tougshire_auth.urls")),
+        path("libtekin/", include("libtekin.urls")),
+        path("touglates/", include("touglates.urls")),
+        path("mifi_compare/", include("mifi_compare.urls")),
+    ]
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)

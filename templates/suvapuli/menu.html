@@ -36,17 +36,6 @@
       </div>
     {% endif %}
   {% endif %}
-  {% if perms.prosdib.view_project %}
-    {% if 'prosdib' in request.resolver_match.app_names %}
-      <div class="menu-item menu-here">
-        Projects
-      </div>
-    {% else %}
-      <div class="menu-item">
-        <a href="{% url 'prosdib:project-list' %}">Projects</a>
-      </div>
-    {% endif %}
-  {% endif %}
   {% if user.is_staff %}
     <div class='menu-item'>
       <a href="{% url 'admin:app_list' 'libtekin' %}..">
