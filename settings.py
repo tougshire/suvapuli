@@ -34,8 +34,10 @@ INSTALLED_APPS = [
     "touglates.apps.TouglatesConfig",
     "django_filters_stoex.apps.DjangoFiltersStoexConfig",
     "tougshire_auth.apps.TougshireAuthConfig",
+    "spl_members.apps.SplMembersConfig",
     "libtekin.apps.LibtekinConfig",
     "mifi_compare",
+    "discovery_appointments.apps.DiscoveryAppointmentsConfig",
     "spl_scheduler.apps.SplSchedulerConfig",
 ]
 
@@ -73,12 +75,6 @@ WSGI_APPLICATION = "suvapuli.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "var" / "suvapuli.db",
-    }
-}
 
 AUTH_USER_MODEL = "tougshire_auth.TougshireAuthUser"
 
