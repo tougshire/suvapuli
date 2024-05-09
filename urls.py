@@ -27,6 +27,7 @@ urlpatterns = (
         path("admin/", admin.site.urls),
         path("accounts/", include("tougshire_auth.urls")),
         path("libtekin/", include("libtekin.urls")),
+        path("members/", include("spl_members.urls")),
         path("touglates/", include("touglates.urls")),
         path("mifi_compare/", include("mifi_compare.urls")),
     ]
