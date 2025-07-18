@@ -1,4 +1,3 @@
-
 <div class="menu menu-top">
   {% url 'home' as home %}
   {% if home > '' %}
@@ -12,46 +11,68 @@
       </div>
     {% endif %}
   {% endif %}
-  {% comment %}
-  {% if perms.libtekticket.view_ticket %}
-    {% if 'libtekticket' in request.resolver_match.app_names %}
-      <div class="menu-item menu-here">
-        Tickets
-      </div>
-    {% else %}
-      <div class="menu-item">
-        <a href="{{ libtekticket_url }}">Tickets</a>
-      </div>
-    {% endif %}
-  {% endif %}
-  {% endcomment %}
-  {% if perms.libtekin.view_item %}
-    {% if 'libtekin' in request.resolver_match.app_names %}
+
+  {% if perms.libtekin256.view_item %}
+    {% if 'libtekin256' in request.resolver_match.app_names %}
       <div class="menu-item menu-here">
         Inventory
       </div>
     {% else %}
       <div class="menu-item">
-        <a href="{% url 'libtekin:item-list' %}">Inventory</a>
+        <a href="{% url 'libtekin256:article-list' %}">Inventory</a>
       </div>
     {% endif %}
   {% endif %}
+
+  {% comment %}
+  {% if perms.spl_banlist.view_banaction %}
+    {% if 'spl_banlist' in request.resolver_match.app_names %}
+      <div class="menu-item menu-here">
+        Ban List
+      </div>
+    {% else %}
+      <div class="menu-item">
+        <a href="{% url 'spl_banlist:banaction-list' %}">Ban List</a>
+      </div>
+    {% endif %}
+  {% endif %}
+  {% endcomment %}
+
+  {% comment %}
+  {% if perms.spl_discoveries.view_appointment %}
+    {% if 'spl_discoveries' in request.resolver_match.app_names %}
+      <div class="menu-item menu-here">
+        Discoveries
+      </div>
+    {% else %}
+      <div class="menu-item">
+        <a href="{% url 'spl_discoveries:appointment-list' %}">Discoveries</a>
+      </div>
+    {% endif %}
+  {% endif %}
+  {% endcomment %}
+
   {% if user.is_staff %}
     <div class='menu-item'>
-      <a href="{% url 'admin:app_list' 'libtekin' %}..">
+      <a href="{% url 'admin:app_list' 'libtekin256' %}..">
         Admin
       </a>
     </div>
   {% endif %}
+
   {% if user.username %}
     {% url 'profile' as profile %}
     <div class="menu-item">
       {% if profile > '' %}
-        <a href="{{ profile }}">{{ user }}</a>
+        <a id="a_profile" href="{{ profile }}">{{ user }}</a>
       {% else %}
         {{ user.username }}
       {% endif %}
-      <a href="{% url 'logout' %}">/ Logout</a>
+      <form action="{% url 'logout' %}" method="POST" style="display:inline">{% csrf_token %}<button id="btn_logout" type="submit" >Logout</button></form>
+      <script>
+        document.getElementById("btn_logout").style.cssText = window.getComputedStyle(document.getElementsByClassName("menu-item")[0]).cssText
+
+      </script>
     </div>
   {% else %}
     <div class="menu-item"><a href="{% url 'login' %}">Login</a></div>

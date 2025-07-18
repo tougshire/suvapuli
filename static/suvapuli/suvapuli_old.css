@@ -17,27 +17,18 @@ input.disabled, select.disabled {
     width:40%;
 }
 
-.menu-top, .app-menu, .object-menu {
+.menu-top, .app-menu {
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 1px 1px;
 }
-
 .menu-bottom {
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 1px 1px;
 }
-
-.menu-here::before {
-    content: '['
-}
-.menu-here::after {
-    content: ']'
-}
-
 
 .form .formset {
     margin-left:2em;

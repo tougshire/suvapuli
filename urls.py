@@ -26,11 +26,9 @@ urlpatterns = (
         path("", TemplateView.as_view(template_name="suvapuli/home.html"), name="home"),
         path("admin/", admin.site.urls),
         path("accounts/", include("tougshire_auth.urls")),
-        path("libtekin/", include("libtekin.urls")),
-        path("members/", include("spl_members.urls")),
+        path("libtekin/", include("libtekin256.urls")),
+        path("libstaff/", include("libstaff256.urls")),
         path("touglates/", include("touglates.urls")),
-        path("discovery/", include("discovery_appointments.urls")),
-        path("mifi_compare/", include("mifi_compare.urls")),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

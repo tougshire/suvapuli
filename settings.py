@@ -32,13 +32,16 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "touglates.apps.TouglatesConfig",
+    "django_filters",
     "django_filters_stoex.apps.DjangoFiltersStoexConfig",
     "tougshire_auth.apps.TougshireAuthConfig",
-    "spl_members.apps.SplMembersConfig",
-    "libtekin.apps.LibtekinConfig",
-    "mifi_compare",
-    "discovery_appointments.apps.DiscoveryAppointmentsConfig",
-    "spl_scheduler.apps.SplSchedulerConfig",
+    "libtekin256",
+    "libstaff256",
+#    "spl_members.apps.SplMembersConfig",
+#    "mifi_compare",
+#    "spl_discoveries.apps.SplDiscoveriesConfig",
+#    "spl_banlist.apps.SplBanlistConfig",
+#    "spl_scheduler.apps.SplSchedulerConfig",
 ]
 
 MIDDLEWARE = [
@@ -123,14 +126,59 @@ STATICFILES_DIRS = [BASE_DIR / "suvapuli/static"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LIBTEKIN_ID_CHOICES = [
-    ("serial_number", "Serial Number"),
-    ("service_number", "Service Number"),
-    ("asset_number", "Asset Number"),
-    ("barcode", "Barcode"),
-    ("phone_number", "Phone Number"),
-    ("mobile_id", "Mobile ID"),
-]
+LIBTEKIN = {
+    "customfields":{
+        "customfield01":{
+            "label":"Serial Number",
+            "help_text":"The Serial Number"
+        },
+        "customfield02":{
+            "label":"Service ID",
+            "help_text":"The Service Tag Number (Some mfrs use this as a alternative tserial number for service)"
+        },
+        "customfield03":{
+            "label":"Phone Number",
+            "help_text":"The Phone Number, for devices like phones and computers with mobile connectivity"
+        },
+        "customfield04":{
+            "label":"IMEI",
+            "help_text":"The IMEI, for devices like phones and computers with mobile connectivity"
+        },
+        "customfield05":{
+            "label":"Asset Number",
+            "help_text":"The asset number assigned by IT (usually on a City of Suffolk tag attached to the device)"
+        },
+        "customfield06":{
+            "label":"Barcode",
+            "help_text":"The network name ex \"LIBW10L-AB12345\""
+        },
+        "customfield07":{
+            "label":"Network Name",
+            "help_text":"The network name ex \"LIBW10L-AB12345\""
+        },
+        "customfield08":{
+            "label":"Admin Password",
+            "help_text":"The administrator password for this device"
+        },
+        "customfield09":{
+            "label":"SSID",
+            "help_text":"The SSID for access points"
+        },
+        "customfield10":{
+            "label":"IP Address",
+            "help_text":"The IP Address if static"
+        },
+        "customfield11":{
+            "label":"Polaris Term/Pswd",
+            "help_text":"The Polaris terminal name and password (ex sl-ts017/W0mb@t)"
+        },
+        "customfield00":{
+            "label":"",
+            "help_text":""
+        },
+
+    }
+}
 
 # PROJECT_INCLUDE_FILE = 'suvapuli/menu.html'
 PROJECT_INCLUDE_FILES = {
@@ -140,3 +188,19 @@ PROJECT_INCLUDE_FILES = {
 
 
 DEFAULT_FROM_EMAIL = "suffolkpubliclibrary@tougshire.com"
+
+HONEYPOT_FIELDS = {
+    "spl_discoveries":{
+        "InquiryForm":{
+            "honeypota":{
+                "label":"Grandfather's Maiden Name",
+                "help_text":"Please enter your grandfather's maiden name",
+            },
+            "honeypotb":{
+                "label":"Foot Address",
+                "help_text":"Please enter the address of your foot",
+            }
+
+        }
+    }
+}
