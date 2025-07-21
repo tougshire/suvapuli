@@ -28,6 +28,8 @@ urlpatterns = (
         path("accounts/", include("tougshire_auth.urls")),
         path("libtekin/", include("libtekin256.urls")),
         path("libstaff/", include("libstaff256.urls")),
+        path("codabar/", include("codabar_generator.urls")),
+        path("hotspot_insert/", include("hotspot_insert_generator.urls")),
         path("touglates/", include("touglates.urls")),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

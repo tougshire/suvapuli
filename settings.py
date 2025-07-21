@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "tougshire_auth.apps.TougshireAuthConfig",
     "libtekin256",
     "libstaff256",
+    "codabar_generator",
+    "hotspot_insert_generator",
 #    "spl_members.apps.SplMembersConfig",
 #    "mifi_compare",
 #    "spl_discoveries.apps.SplDiscoveriesConfig",
